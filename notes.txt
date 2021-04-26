@@ -78,3 +78,6 @@ Data Types in Golang
     rune (alias for int32) (representing 1 unicode character)
 
     NO implicity type conversion
+
+Constructs
+    if else, switch case, for 
