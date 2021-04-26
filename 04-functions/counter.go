@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var count = getCounter()
+	count := getCounter()
 	fmt.Println(count())
 	fmt.Println(count())
 	fmt.Println(count())
