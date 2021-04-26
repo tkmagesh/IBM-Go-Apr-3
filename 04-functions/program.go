@@ -5,7 +5,18 @@ import (
 	"math/rand"
 )
 
+/*
+var greet func(string, string) string = func(firstname, lastname string) string {
+	return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
+}
+*/
+
 func main() {
+
+	/* greet := func(firstname, lastname string) string {
+		return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
+	} */
+
 	var firstname, lastname string
 	fmt.Println("Enter the first name :")
 	fmt.Scanf("%s", &firstname)
@@ -26,10 +37,6 @@ func greet(firstname string, lastname string) string {
 	return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
 }
 */
-
-func greet(firstname, lastname string) string {
-	return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
-}
 
 /*
 func getRand(limit int) (int, int) {

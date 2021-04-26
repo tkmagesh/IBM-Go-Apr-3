@@ -80,4 +80,19 @@ Data Types in Golang
     NO implicity type conversion
 
 Constructs
-    if else, switch case, for 
+    if else, switch case, for
+
+
+Build an interactive calculator
+    
+    1. Add
+    2. Subtract
+    3. Multiply
+    4. Divide
+    5. Exit
+
+Higher Order functions
+    Functions can be assigned to variables
+    Functions can be passed as arguments to other functions
+    Functions can be returned as return values from other functions
+    

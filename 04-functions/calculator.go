@@ -12,18 +12,23 @@ func main() {
 		n1, n2 := getOperands()
 		switch choice {
 		case 1:
-			result = add(n1, n2)
+			result = log(n1, n2, add)
 		case 2:
-			result = subtract(n1, n2)
+			result = log(n1, n2, subtract)
 		case 3:
-			result = multiply(n1, n2)
+			result = log(n1, n2, multiply)
 		case 4:
-			result = divide(n1, n2)
+			result = log(n1, n2, divide)
 		default:
 			fmt.Println("Invalid choice. Please try again!")
 		}
 		fmt.Printf("Result = %d\n", result)
 	}
+}
+
+func log(n1, n2 int, operation func(int, int) int) int {
+	fmt.Printf("Processing %d and %d\n", n1, n2)
+	return operation(n1, n2)
 }
 
 func add(n1, n2 int) int {
