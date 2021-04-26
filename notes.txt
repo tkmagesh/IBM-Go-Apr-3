@@ -1,0 +1,54 @@
+Name
+Primary Skillset
+Experience in Go (If any)
+Any specific expectations from the training?
+Anything interesting you read (book) / Watched a movie / show?
+
+Pushkin Vertigo
+Downton Abbey
+http://justwatch.com
+
+Schedule
+9:30 - commence
+11:00 - Tea break for 20 mins
+1:00 - Lunch break for 60 mins
+3:30 - Tea break for 20 mins
+5:30 - Wind up
+
+Methodology
+    No powerpoints
+
+Golang
+    Why?
+
+
+    - C
+~1980 - C++
+1995 - Java
+1999 - C# & .NET
+~1999 - Ruby
+2008 - Golang
+
+
+Concurrency support in the Language
+    Built for concurrency
+    go, chan, range, select
+    Builtin Scheduler
+    1000s of concurrent operations in 1 thread
+    No exceptions (ONLY errors)
+
+Simplest languages
+    25 keywords
+    No classes
+        Only structs & functions
+        Composition over Inheritance
+
+
+golang.org
+visualstudio code (http://code.visualstudio.com)
+
+Go environment variables
+    GOROOT
+        - go tools installation folder
+
+    
