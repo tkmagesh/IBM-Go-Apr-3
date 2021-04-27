@@ -142,3 +142,6 @@ Include(product) => true / false based on the presence of the given product in t
 Any() => if there is any product matching the given criteria (user defined)
 All() => return true/false based on all the products matching the given criteria (user defined)
 Filter() => return the products matching the given criteria (user defined)
+
+
+Implement the "Sort" for the "Products" type
