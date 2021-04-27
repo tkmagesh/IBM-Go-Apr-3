@@ -3,25 +3,20 @@ package main
 import "fmt"
 
 func main() {
+	operations := map[int]func(int, int) int{
+		1: add,
+		2: subtract,
+		3: multiply,
+		4: divide,
+	}
 	for {
 		choice := getMenuOption()
-		if choice == 5 {
+		operation, exists := operations[choice]
+		if !exists {
 			break
 		}
-		result := 0
 		n1, n2 := getOperands()
-		switch choice {
-		case 1:
-			result = log(n1, n2, add)
-		case 2:
-			result = log(n1, n2, subtract)
-		case 3:
-			result = log(n1, n2, multiply)
-		case 4:
-			result = log(n1, n2, divide)
-		default:
-			fmt.Println("Invalid choice. Please try again!")
-		}
+		result := operation(n1, n2)
 		fmt.Printf("Result = %d\n", result)
 	}
 }
