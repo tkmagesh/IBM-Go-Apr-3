@@ -58,6 +58,38 @@ func main() {
 	//grapes := PerishableProduct{Product{101, "Grapes", 80, 50, "Fruits"}, 2}
 	grapes := NewPerishableProduct(101, "Grapes", 80, 50, "Fruits", 2)
 	printPerishableProduct(grapes)
+
+	products := []Product{
+		{id: 100, name: "Pen", cost: 10, units: 10, category: "stationary"},
+		{id: 106, name: "Den", cost: 16, units: 50, category: "stationary"},
+		{id: 107, name: "Ken", cost: 12, units: 20, category: "utencil"},
+		{id: 102, name: "Zen", cost: 18, units: 70, category: "stationary"},
+		{id: 104, name: "Ten", cost: 15, units: 30, category: "utencil"},
+		{id: 103, name: "Len", cost: 14, units: 50, category: "stationary"},
+	}
+
+	stationaryProductCriteria := func(product Product) bool {
+		return product.category == "stationary"
+	}
+
+	anyStationaryProducts := Any(products, stationaryProductCriteria)
+
+	fmt.Println("Any stationary products ? : ", anyStationaryProducts)
+
+	anyGroceryProducts := Any(products, func(product Product) bool {
+		return product.category == "grocery"
+	})
+
+	fmt.Println("Any grocery products ? : ", anyGroceryProducts)
+}
+
+func Any(products []Product, criteria func(Product) bool) bool {
+	for _, product := range products {
+		if criteria(product) {
+			return true
+		}
+	}
+	return false
 }
 
 /*
