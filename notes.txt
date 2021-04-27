@@ -120,4 +120,8 @@ Collections
 Write a program that intializes a []int with 20 random values and split the list into two lists : one for even numbers and one for numbers and print the even & odd list
 
 
+Write a program that will group the words in the given sentence by the size of the word and print the most occurant 'word size'
+
+"Velit officia dolor excepteur eu Lorem deserunt excepteur anim ullamco. Sunt ex tempor sit ullamco do irure irure pariatur nisi. Ipsum ullamco id ex elit ut labore dolor amet Lorem. Anim non aliquip cupidatat duis. Sint commodo sit esse ipsum sunt in ea excepteur enim fugiat. Sunt tempor cillum laboris enim elit sint tempor ullamco culpa ut ea. Eu elit do est voluptate deserunt exercitation aliquip labore anim duis velit eiusmod laborum irure. Amet cupidatat ad veniam in aliqua velit pariatur elit incididunt esse veniam nulla. In irure sunt aliqua minim ipsum nostrud sit nulla dolore sit."
+
 Errors
