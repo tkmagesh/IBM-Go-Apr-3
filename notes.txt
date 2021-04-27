@@ -100,3 +100,24 @@ Higher Order functions
 count() //=> 1
 count() //=> 2
 count() //=> 3
+
+Collections
+    Array
+        Fixed size collection
+        The data has to be of the same type
+
+    Slice
+        Variable size collection
+        It uses an Array internally
+        The data has to be of the same type
+        Apis to manipulate a slice (append, len)
+
+    Map
+        collection of key/value pairs
+        The type of the key and value are customizable
+
+
+Write a program that intializes a []int with 20 random values and split the list into two lists : one for even numbers and one for numbers and print the even & odd list
+
+
+Errors
