@@ -81,6 +81,40 @@ func main() {
 	})
 
 	fmt.Println("Any grocery products ? : ", anyGroceryProducts)
+
+	fmt.Println("All products stationary products ? :", All(products, func(product Product) bool {
+		return product.category == "stationary"
+	}))
+
+	stationaryProducts := Filter(products, func(product Product) bool {
+		return product.category == "stationary"
+	})
+	fmt.Println("Stationary Products ")
+	printProducts(stationaryProducts)
+
+}
+
+func printProducts(products []Product) {
+	for _, product := range products {
+		Print(product)
+	}
+}
+
+func Print(product Product) {
+	fmt.Printf("Id = %d, Name = %s, cost = %v, units = %d, category = %s\n", product.id, product.name, product.cost, product.units, product.category)
+}
+
+func Index(products []Product, product Product) int {
+	for idx, productInList := range products {
+		if product == productInList {
+			return idx
+		}
+	}
+	return -1
+}
+
+func Include(products []Product, product Product) bool {
+	return Index(products, product) != -1
 }
 
 func Any(products []Product, criteria func(Product) bool) bool {
@@ -91,6 +125,45 @@ func Any(products []Product, criteria func(Product) bool) bool {
 	}
 	return false
 }
+
+func All(products []Product, criteria func(Product) bool) bool {
+	for _, product := range products {
+		if !criteria(product) {
+			return false
+		}
+	}
+	return true
+}
+
+func Filter(products []Product, criteria func(Product) bool) []Product {
+	result := []Product{}
+	for _, product := range products {
+		if criteria(product) {
+			result = append(result, product)
+		}
+	}
+	return result
+}
+
+/*
+func AnyProductWithUnitsGt50(products []Product) bool {
+	for _, product := range products {
+		if product.units > 50 {
+			return true
+		}
+	}
+	return false
+}
+
+func AnyStationaryProducts(products []Product) bool {
+	for _, product := range products {
+		if product.category == "stationary" {
+			return true
+		}
+	}
+	return false
+}
+*/
 
 /*
 func printPerishableProduct(pp PerishableProduct) {
