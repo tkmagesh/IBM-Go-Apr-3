@@ -57,4 +57,37 @@ func main() {
 	fmt.Printf("nosSlice[5:] = %v\n", nosSlice[5:])
 	fmt.Printf("nosSlice[:5] = %v\n", nosSlice[:5])
 
+	//Maps
+	cityRanks := map[string]int{
+		"Udupi":     2,
+		"Bengaluru": 4,
+		"Mangaluru": 1,
+		"Mysuru":    3,
+	}
+	fmt.Printf("Type of cityRanks = %T\n", cityRanks)
+	fmt.Println(cityRanks)
+
+	fmt.Println("Adding a new key/value pair")
+	cityRanks["Chennai"] = 5
+	fmt.Println(cityRanks)
+
+	for city, rank := range cityRanks {
+		fmt.Printf("City = %q, Rank = %d\n", city, rank)
+	}
+
+	if chennaiRank, exists := cityRanks["Chennai"]; exists {
+		fmt.Println("Rank of Chennai is ", chennaiRank)
+	} else {
+		fmt.Println("Chennai is not ranked")
+	}
+
+	//remove an key/value pair
+	delete(cityRanks, "Chennai")
+	fmt.Println("After deleting Chennai")
+	if chennaiRank, exists := cityRanks["Chennai"]; exists {
+		fmt.Println("Rank of Chennai is ", chennaiRank)
+	} else {
+		fmt.Println("Chennai is not ranked")
+	}
+
 }
