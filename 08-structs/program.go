@@ -38,6 +38,14 @@ func main() {
 		var p1 Product = Product{name: "Pen", id: 100, units: 200, cost: 10, category: "stationary"}
 	*/
 	p1 := Product{name: "Pen", id: 100, units: 200, cost: 10, category: "stationary"}
+	p2 := Product{name: "Pen", id: 100, units: 200, cost: 10, category: "stationary"}
+
+	if p1 == p2 {
+		fmt.Println("p1 is equal to p2")
+	} else {
+		fmt.Println("p1 is not equal to p2")
+	}
+
 	fmt.Printf("Type of p1 = %T\n", p1)
 	fmt.Println("Product p1 = ", p1)
 	applyDiscount(&p1, 10)
