@@ -145,3 +145,13 @@ Filter() => return the products matching the given criteria (user defined)
 
 
 Implement the "Sort" for the "Products" type
+
+Single Threaded
+    (+) Less Resource 
+    (-) NOT for CPU intensive operations
+    (-) callbacks will make the application difficult to maintain
+
+Multi Threaded
+    (+) Code is reasonably easy to maintain
+    (-) Resource Intensive
+
