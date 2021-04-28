@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	mod "modularity/models"
+
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -14,14 +16,14 @@ func main() {
 		{Id: 104, Name: "Ten", Cost: 15, Units: 30, Category: "utencil"},
 		{Id: 103, Name: "Len", Cost: 14, Units: 50, Category: "stationary"},
 	}
-	fmt.Println("Initial List")
+	color.Yellow("Initial List")
 	fmt.Println(products)
 
-	fmt.Println("Sort By id")
+	color.Blue("Sort By id")
 	products.Sort("id")
 	fmt.Println(products)
 
-	fmt.Println("Sort By id - descending")
+	color.Magenta("Sort By id - descending")
 	products.SortDesc("id")
 	fmt.Println(products)
 
