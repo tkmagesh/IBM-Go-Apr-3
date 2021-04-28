@@ -68,6 +68,11 @@ func (products Products) Sort(attrName string) {
 	sort.Sort(products)
 }
 
+func (products Products) SortDesc(attrName string) {
+	currentProductComparer = productComparers[attrName]
+	sort.Sort(sort.Reverse(products))
+}
+
 func main() {
 
 	products := Products{
@@ -83,6 +88,10 @@ func main() {
 
 	fmt.Println("Sort By id")
 	products.Sort("id")
+	fmt.Println(products)
+
+	fmt.Println("Sort By id - descending")
+	products.SortDesc("id")
 	fmt.Println(products)
 
 	fmt.Println("Sort By name")
