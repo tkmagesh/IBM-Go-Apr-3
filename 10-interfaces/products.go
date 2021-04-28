@@ -15,6 +15,8 @@ type Product struct {
 
 type Products []Product
 
+type ProductsComparer func(p1, p2 Product) bool
+
 /* Methods for Stringer interface of the 'fmt' package */
 func (p Product) String() string {
 	return fmt.Sprintf("Id=%d, Name=%s, Cost=%v, Units=%d, Category=%s\n", p.id, p.name, p.cost, p.units, p.category)
@@ -28,14 +30,24 @@ func (products Products) String() string {
 	return result
 }
 
-var currentProductComparer func(p1, p2 Product) bool
+var currentProductComparer ProductsComparer
 
-func compareProductsById(p1, p2 Product) bool {
-	return p1.id < p2.id
-}
-
-func compareProductsByName(p1, p2 Product) bool {
-	return p1.name < p2.name
+var productComparers map[string]ProductsComparer = map[string]ProductsComparer{
+	"id": func(p1, p2 Product) bool {
+		return p1.id < p2.id
+	},
+	"name": func(p1, p2 Product) bool {
+		return p1.name < p2.name
+	},
+	"cost": func(p1, p2 Product) bool {
+		return p1.cost < p2.cost
+	},
+	"units": func(p1, p2 Product) bool {
+		return p1.units < p2.units
+	},
+	"category": func(p1, p2 Product) bool {
+		return p1.category < p2.category
+	},
 }
 
 /* Methods for 'Interface' interface of 'sort' package  */
@@ -52,12 +64,7 @@ func (products Products) Less(i, j int) bool {
 }
 
 func (products Products) Sort(attrName string) {
-	switch attrName {
-	case "", "id":
-		currentProductComparer = compareProductsById
-	case "name":
-		currentProductComparer = compareProductsByName
-	}
+	currentProductComparer = productComparers[attrName]
 	sort.Sort(products)
 }
 
@@ -80,6 +87,18 @@ func main() {
 
 	fmt.Println("Sort By name")
 	products.Sort("name")
+	fmt.Println(products)
+
+	fmt.Println("Sort By cost")
+	products.Sort("cost")
+	fmt.Println(products)
+
+	fmt.Println("Sort By units")
+	products.Sort("units")
+	fmt.Println(products)
+
+	fmt.Println("Sort By category")
+	products.Sort("category")
 	fmt.Println(products)
 
 }
