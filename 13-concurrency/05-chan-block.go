@@ -16,7 +16,6 @@ func main() {
 	fmt.Println("Attempting to read the data from the channel")
 	fmt.Printf("Data from channel = %v\n", <-ch)
 	fmt.Println("Attempt to read the data from the channel completed")
-
 	fmt.Println("press ENTER to shutdown!")
 	var input string
 	fmt.Scanln(&input)
