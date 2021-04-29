@@ -10,6 +10,7 @@ import (
 
 func main() {
 	fileHandle, fileError := os.Open("sample.txt")
+	defer fileHandle.Close()
 	if fileError != nil {
 		log.Fatalln(fileError)
 	}
@@ -18,8 +19,7 @@ func main() {
 		line, err := inputReader.ReadString('.')
 		fmt.Println(line)
 		if err == io.EOF {
-			break
+			return
 		}
 	}
-	fileHandle.Close()
 }
