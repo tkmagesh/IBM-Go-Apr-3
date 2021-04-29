@@ -9,11 +9,12 @@ func fibonacci(ch chan int) {
 		ch <- x
 		x, y = y, x+y
 	}
+	fmt.Println("Closing the channel")
 	close(ch)
 }
 
 func main() {
-	fibCh := make(chan int, 5)
+	fibCh := make(chan int, 1)
 	go fibonacci(fibCh)
 	for fibNo := range fibCh {
 		fmt.Println(fibNo)
