@@ -22,6 +22,7 @@ func main() {
 	fmt.Println("Delaying the ending of the goroutine by 5 seconds")
 	time.Sleep(5 * time.Second)
 	endCh <- "stop"
+	fmt.Println("press ENTER to shutdown!")
 	var input string
 	fmt.Scanln(&input)
 }
