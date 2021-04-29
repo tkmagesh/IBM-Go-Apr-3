@@ -157,3 +157,30 @@ Multi Threaded
 
 
 Dont Share memory for communication, instead communicate by sharing memory
+
+Http Disadvantages
+    slow
+    only request & response communication pattern
+    json serialization
+
+gRPC
+    http2 (standardized version of a google protocol SPDY)
+        one connection can be used for a batch of requests and responses
+
+    protobuf
+        - most efficient serialization mechanisms
+    tools for creating proxies
+    communication patters
+        - request & response
+        - client streaming
+        - server streaming
+        - client streaming & server streaming
+
+    - create a .proto (file)
+        define messages (incoming & outgoing) & services
+    - create the stub & proxy
+    - write the service & client implementation
+
+Tools for generating proxies
+    go get -u google.com.golang.org/grpc
+    go get -u github.com/golang/protobuf/protoc-gen-go

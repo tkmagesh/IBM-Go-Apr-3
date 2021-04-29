@@ -8,7 +8,7 @@ import (
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-
+	//r.StaticFS("/more_static", http.Dir("my_file_system"))
 	v1 := r.Group("/v1")
 	{
 		v1.GET("todo", controllers.GetTodos)
